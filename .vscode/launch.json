@@ -97,6 +97,26 @@
       "env": {
         "NEXT_PRIVATE_LOCAL_WEBPACK": "1"
       }
+    },
+    {
+      "name": "client side debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "next side debug",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "cwd": "${workspaceFolder}/packages/aaa-my-test",
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "full stack debug",
+      "configurations": ["next side debug", "client side debug"]
     }
   ]
 }
